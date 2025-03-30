@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Bebas+Neue&family=Creepster&family=Grechen+Fuemen&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+IN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Smooch+Sans:wght@100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body.scrollable {
+    overflow: auto;
+    height: auto;
+}
+
+*::-webkit-scrollbar{
+    width: 0;
+}
+
+.playfair-display-royal {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+.landing_page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 1s ease-in-out;
+    overflow: hidden;
+}
+.landing_page>.start{
+    width: auto;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.landing_page>.start>h1{
+    font-size: 10rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.landing_page>.start>button{
+    border-radius: 25px;
+    height: 50px;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.landing_page>.start>button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.landing_page.non-display {
+    height: 0 !important;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 2;
+}
+.content>.navbar>nav{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 25px;
+}
+.content>.navbar>nav>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+}
+.content>.navbar>nav>ul>li{
+    color: white;
+    font-size: 2rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    display: flex;
+}
+.content>.navbar>nav>ul>li>i{
+    cursor: pointer;
+}
+.card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    width: 800px;
+    height: 800px;
+    
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper>.title{
+    width: 100%;
+    padding: 25px 50px;
+    height: 25vh;
+    border-top: 2.5px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2.5px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    /* justify-content: space-between; */
+    cursor: pointer;
+    overflow: visible;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.wrapper>.title:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 2.5px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2.5px solid rgba(255, 255, 255, 0.3);
+    padding-left: 70px;
+}
+
+.title>span{
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    font-size: 6rem;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.title:hover>span {
+    transform: translateX(20px);
+}
+
+.title>img{
+    width: 20rem;
+    height: 25rem;
+    border-radius: 25px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.title:hover>img {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .title>span {
+        font-size: 3rem;
+    }
+    
+    .title>img {
+        height: 15rem;
+        right: 20px;
+    }
+    
+    .wrapper>.title {
+        padding: 15px 25px;
+    }
+    
+    .wrapper>.title:hover {
+        padding-left: 35px;
+    }
+}
+
+.typewriter {
+    border-right: 4px solid white;
+    animation: blinkCursor 0.75s step-end infinite;
+    white-space: nowrap;
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+}
+
+
+
+
+
+.more-button {
+    margin: 2rem 0;
+    padding: 1rem 3rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.more-button::after {
+    content: '↓';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.more-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.more-button:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    padding-bottom: 2.5rem;
+}
+
+.more-button:hover::after {
+    opacity: 1;
+    bottom: 10px;
+}
+
+.more-button:hover:before {
+    left: 100%;
+}
+
+
+
+.Img-container{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+.box1{
+    
+    width: 600px;
+    height: 300px;
+    /* background-color: red; */
+    background: url("https://hdqwalls.com/download/bugatti-chiron-cgi-xr-1920x1080.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.box2{
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    /* background-color: red; */
+    background: url("https://th.bing.com/th/id/OIP.A7cWtXai58IDTKubRXCM1wHaEK?rs=1&pid=ImgDetMain");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.box3{
+    
+    width: 800px;
+    height: 300px;
+    /* background-color: red; */
+    background: url("https://content.wheelz.me/wp-content/uploads/2023/07/03-BUGATTI-website.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    
+}
+.box4{
+    
+    width: 600px;
+    height: 400px;
+    /* background-color: red; */
+    background: url("https://i.ytimg.com/vi/VlVVn5xQkRg/maxresdefault.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%,-50%);
+    
+}
+.box5{
+    
+    width: 1200px;
+    height: 100px;
+    /* background-color: red; */
+    background: url("https://www.yankodesign.com/images/design_news/2023/02/auto-draft/bugatti_custom_vehicles_2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    
+}
+
+
+
+
+#textbox{
+    width: 500%;
+    height: 100vh;
+    background-color: black; 
+    display: flex;
+    align-items: center;
+}
+#textbox>h1{
+    font-size:45rem;
+    transform: translateX(20%); 
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    color: white;
+}
+
+.horizontalVideoZoom{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+#SomethingNew{
+    width: 500px;
+    height: 100vh;
+    object-fit: cover;
+    will-change: width;
+}
+
+.MoreDiv{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+.MoreDiv>.text{
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    font-size: 150px;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-family: "Playfair Display", serif;
+}
+
+
+.cards-container-for-idontknow{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.cards-container-for-idontknow>.cards{
+    width: 600px;
+    height: 600px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.cards-container-for-idontknow>.cards>video{
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.cards-container-for-idontknow>.cards:hover {
+    transform: scale(1.02);
+}
